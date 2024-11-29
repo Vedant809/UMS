@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "Add New User";
+}
+
+@model UserDetails
+
+<html>
+    
+    <body>
+    <script src="~/js/delete.js"></script>
+       <div>
+        <form id="createUserForm">
+
+               <div>
+                   <label for="FirstName">
+                       First Name
+                   </label>
+                   <input id="FirstName" name="FirstName" value="@Model?.FirstName" />
+               </div>
+
+            <div>
+                <label for="LastName">
+                    Last Name
+                </label>
+                <input name="LastName" id="LastName" value="@Model?.LastName"  />
+            </div>
+
+            <div>
+                <label for="Email">
+                    Email
+                </label>
+                <input name="Email" id="Email" value="@Model?.Email" />
+            </div>
+
+            <div>
+                <label for="DOB">
+                    DOB
+                </label>
+                <input name="DOB" type="date" id="DOB" value="@Model?.DOB.ToString("yyyy-MM-dd")" />
+            </div>
+
+            <div>
+                <label for="Roles">
+                    Role
+                </label>
+                <input name="Roles" id="Roles" value="@Model?.Roles" />
+            </div>
+            <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+           </form>
+       </div>
+    </body>
+</html>

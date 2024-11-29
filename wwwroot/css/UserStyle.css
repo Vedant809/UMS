@@ -1,0 +1,47 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: lightcyan;
+    margin: 0;
+    height: 70vh; /* Full viewport height */
+    display: grid;
+    place-items: center; /* Centers content horizontally and vertically */
+    margin-top:50px;
+}
+
+.container {
+    display: grid;
+    place-items: center; /* Centers the form inside the container */
+    background: white; /* Background for the form */
+    padding: 40px; /* Padding to create space around the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for a modern look */
+    max-width: 400px; /* Limits form width */
+    width: 100%; /* Ensures responsive scaling */
+    margin-top:50px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 38px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    place-items:center;
+}
+
+.align-content-center{
+    place-items:center;
+}

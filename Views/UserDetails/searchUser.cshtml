@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model IEnumerable<UserDetails>
+
+<html>
+<head>
+    <title>User Screen</title>
+</head>
+<body>
+    <link rel="stylesheet" href="~/css/Screen.css" />
+    <script src="~/js/delete.js"></script>
+    <script src="~/js/edit.js"></script>
+    <div>
+        <input id="first" class="input-search" placeholder="Type first name to search" />
+        <button class="btn btn-primary" type="submit" onclick="search()">Search</button>
+    </div>
+    <div class="deletebutton">
+        <button onclick="deleteSelectedUsers()">Delete</button>
+    </div>
+    <div class="addbutton">
+        <button onclick="window.location.href='@Url.Action("AddUser", "UserDetails")'">Add User</button>
+    </div>
+
+    <div class="table-group">
+        <table>
+            <thead>
+                <tr>
+                    <th class="select-checkbox">
+                        <input type="checkbox" id="selectAll" onclick="toggleSelectAll()" />
+                    </th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Date Of Birth</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td class="select-checkbox">
+                            <input type="checkbox" class="user-checkbox" value="@user.UserId" onclick="updateSelectAll(this)" />
+                        </td>
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
+                        <td>@user.DOB</td>
+                        <td>@user.Email</td>
+                        <td>@user.Roles</td>
+                        <td><button id="edit" onclick="editUser()">Edit</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

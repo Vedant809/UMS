@@ -1,0 +1,71 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "User Screen";
+}
+
+@model IEnumerable<UserDetails>
+
+<html>
+    <head>
+        <title>User Screen</title>
+    </head>
+    <body>
+    <link rel="stylesheet" href="~/css/Screen.css" />
+    <script src="~/js/delete.js"></script>
+    <script src="~/js/edit.js"></script>
+    <div>
+        <input id="first" class="input-search" placeholder="Type first name to search"/>
+        <button class="btn btn-primary" type="submit" onclick="search()">Search</button>
+    </div>
+    <div class="deletebutton">
+        <button onclick="deleteSelectedUsers()">Delete</button>
+    </div>
+    <div class="addbutton">
+        <button onclick="window.location.href='@Url.Action("AddUser", "UserDetails")'">Add User</button>
+    </div>
+
+    <div class="table-group">
+    <table>
+        <thead>
+            <tr>
+                    <th class="select-checkbox">
+                        <input type="checkbox" id="selectAll" onclick="toggleSelectAll()" />
+                    </th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date Of Birth</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var user in Model)
+            {
+                <tr>
+                    <td class="select-checkbox">
+                    <input type="checkbox" class="user-checkbox" value="@user.UserId" onclick="updateSelectAll(this)"/>
+                    </td>
+                    <td>@user.FirstName</td>
+                    <td>@user.LastName</td>
+                    <td>@user.DOB</td>
+                    <td>@user.Email</td>
+                    <td>@user.Roles</td>
+                        <td>
+                            <svg onclick="editUser()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                                <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z" />
+                            </svg>
+                        </td>
+                        <!--                    <td><button id="edit" class="btn btn" onclick="editUser()">Edit</button></td>-->
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+
+    </body>
+</html>

@@ -1,0 +1,77 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.table-group {
+    width: 80%;
+    margin: 50px auto; /* Centering the table horizontally */
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position:absolute;
+    top:40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background-color: #007bff;
+    color: #fff;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #eaf4ff;
+}
+
+tbody td {
+    font-size: 14px;
+}
+
+.input-search{
+    position:absolute;
+    top:22px;
+    right:100px;
+}
+.btn-primary {
+    position: absolute;
+    top: 23px;
+    right: 5px;
+    width:90px;
+    height:33px;
+}
+
+.addbutton {
+    position: absolute;
+    top: 60px;
+    right: 93px;
+}
+
+.deletebutton {
+    position: absolute;
+    top: 60px;
+    right: 23px;
+}
